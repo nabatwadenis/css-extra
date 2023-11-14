@@ -1,0 +1,85 @@
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.dropdown-btn {
+    width: 100%;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #bbccee;
+    cursor: pointer;
+  }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+  }
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.drop-item a:hover{
+    border:.5px;
+    text-decoration: underline;
+    color:lightgray;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: repeat(3, 100px); 
+    gap: 10px; 
+  }
+
+.grid-item {
+    background-color: #ddd;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease; 
+    background-size: cover;
+    background-position: center;
+}
+.grid-item:nth-child(1) {
+    background-image: url('./facebook-icon.png'); 
+  }
+.grid-item:nth-child(2) {
+    background-image: url('./youtube.png'); 
+}
+.grid-item:nth-child(3) {
+    background-image: url('./twitter.png'); 
+}
+.grid-item:nth-child(4) {
+    background-image: url('./instagram.png'); 
+}
+
+.grid-item:hover {
+    background-color: rgba(52, 152, 219, 0.7);
+}
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Initially behind the background image */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease, z-index 0.3s ease;
+}
+
+.grid-item:hover .text-overlay {
+    z-index: 1; /* Move the text overlay to the front on hover */
+    opacity: 1; /* Make the text overlay visible on hover */
+}
